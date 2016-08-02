@@ -1,7 +1,7 @@
 
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
-  #include <avr/power.h>
+#include <avr/power.h>
 #endif
 
 const int analogInPin = 10;  
@@ -10,17 +10,16 @@ int brightness = 0;
 
 #define PIN            6
 
-// # of neopixels
-#define NUMPIXELS      25
+#define NUMPIXELS      25 // # of neopixels
 
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-int delayval = 500; // delay for half a second
+int delayval = 500; 
 
 void setup() {
 
-  pixels.begin(); // This initializes the NeoPixel library.
+  pixels.begin(); 
   Serial.begin(9600);
 }
 
@@ -60,11 +59,11 @@ for(int i=0;i<NUMPIXELS;i++){
     pixels.setPixelColor(23,0,0,brightness); 
     pixels.setPixelColor(24,0,0,brightness); 
 
-    pixels.show(); // This sends the updated pixel color to the hardware.
-
+    pixels.show(); 
+    
  }else{
-    pixels.setPixelColor(i,0); // Moderately bright green color.
-    pixels.show(); // This sends the updated pixel color to the hardware.
+    pixels.setPixelColor(i,0); 
+    pixels.show(); 
         }
   
   }
